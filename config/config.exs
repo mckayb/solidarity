@@ -15,7 +15,8 @@ config :solidarity, SolidarityWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "ALpaaNbd179jbgBD/g/kPTEMtEsKceMUF9hGLTinq6B/dC3B35e4R/H1NqKzhFoI",
   render_errors: [view: SolidarityWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Solidarity.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Solidarity.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "D14S/MmmL2nDzh8mAbKwPh7zGi72X9Iz"]
 
 # Configures Elixir's Logger
 config :logger, :console,

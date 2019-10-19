@@ -1,6 +1,8 @@
 defmodule SolidarityWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :solidarity
 
+  socket "/live", Phoenix.LiveView.Socket
+
   socket "/socket", SolidarityWeb.UserSocket,
     websocket: true,
     longpoll: false

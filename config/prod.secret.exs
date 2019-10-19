@@ -23,9 +23,17 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
+signing_salt =
+  System.get_env("SIGNING_SALT") ||
+    raise """
+    environment variable SIGNING_SALT is missing.
+    You can generate one by calling: mix phx.gen.secret 32
+    """
+
 config :solidarity, SolidarityWeb.Endpoint,
   http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
   secret_key_base: secret_key_base
+  live_view: [signing_salt]
 
 # ## Using releases (Elixir v1.9+)
 #
