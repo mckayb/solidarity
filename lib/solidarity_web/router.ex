@@ -3,7 +3,7 @@ defmodule SolidarityWeb.Router do
   import Phoenix.LiveView.Router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html", "json"]
     plug :fetch_session
     plug :fetch_flash
     plug Phoenix.LiveView.Flash
@@ -19,6 +19,9 @@ defmodule SolidarityWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    resources "/users", UserController, except: [:new, :edit]
+
     live "/clock", ClockLive
   end
 
