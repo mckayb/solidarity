@@ -2,7 +2,6 @@ defmodule Solidarity.Account.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @derive {Jason.Encoder, only: [:email, :name, :username, :uuid]}
   schema "users" do
     field :email, :string
     field :name, :string

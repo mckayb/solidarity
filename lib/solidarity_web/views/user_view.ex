@@ -14,8 +14,6 @@ defmodule SolidarityWeb.UserView do
     %{id: user.id,
       name: user.name,
       uuid: user.uuid,
-      email: user.email,
-      username: user.username,
-      password: user.password}
+      email: user.email}
   end
 end

@@ -47,8 +47,6 @@ defmodule SolidarityWeb.UserControllerTest do
                "id" => id,
                "email" => "some email",
                "name" => "some name",
-               "password" => "some password",
-               "username" => "some username",
                "uuid" => "some uuid"
              } = json_response(conn, 200)["data"]
     end
@@ -72,8 +70,6 @@ defmodule SolidarityWeb.UserControllerTest do
                "id" => id,
                "email" => "some updated email",
                "name" => "some updated name",
-               "password" => "some updated password",
-               "username" => "some updated username",
                "uuid" => "some updated uuid"
              } = json_response(conn, 200)["data"]
     end
