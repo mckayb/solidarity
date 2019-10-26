@@ -45,7 +45,11 @@ defmodule Solidarity.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_live_view, "~> 0.3.0"},
       {:floki, ">= 0.0.0", only: :test},
-      {:dialyxir, "~> 1.0.0-rc.7", only: [:dev], runtime: false}
+      {:dialyxir, "~> 1.0.0-rc.7", only: [:dev], runtime: false},
+      {:mix_test_watch, "~> 0.8", only: :dev, runtime: false},
+      {:ex_unit_notifier, "~> 0.1", only: :test},
+      {:credo, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:sobelow, "~> 0.7", only: [:dev, :test], runtime: false},
     ]
   end
 
