@@ -44,5 +44,7 @@ defmodule SolidarityWeb.Endpoint do
     key: "_solidarity_key",
     signing_salt: "OgYkoTvQ"
 
+  plug Pow.Plug.Session, otp_app: :solidarity
+
   plug SolidarityWeb.Router
 end

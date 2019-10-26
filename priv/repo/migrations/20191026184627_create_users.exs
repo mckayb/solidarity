@@ -3,14 +3,13 @@ defmodule Solidarity.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
-      add :name, :string
-      add :uuid, :string
-      add :email, :string
-      add :username, :string
-      add :password, :string
+      add :email, :string, null: false
+      add :password_hash, :string
+      add :uuid, :string, null: false
 
       timestamps()
     end
 
+    create unique_index(:users, [:email])
   end
 end

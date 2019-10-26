@@ -50,6 +50,7 @@ defmodule Solidarity.MixProject do
       {:ex_unit_notifier, "~> 0.1", only: :test},
       {:credo, "~> 1.0", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.7", only: [:dev, :test], runtime: false},
+      {:pow, "~> 1.0.13"}
     ]
   end
 
@@ -63,7 +64,10 @@ defmodule Solidarity.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate", "test"],
+      lint: ["credo"],
+      security: ["sobelow"],
+      watch: ["test.watch"]
     ]
   end
 end
