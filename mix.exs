@@ -45,7 +45,6 @@ defmodule Solidarity.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_live_view, "~> 0.3.0"},
       {:floki, ">= 0.0.0", only: :test},
-      {:bcrypt_elixir, "~> 2.0"},
       {:dialyxir, "~> 1.0.0-rc.7", only: [:dev], runtime: false},
       {:mix_test_watch, "~> 0.8", only: :dev, runtime: false},
       {:ex_unit_notifier, "~> 0.1", only: :test},
@@ -65,8 +64,10 @@ defmodule Solidarity.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
-      # test: ["ecto.create", "ecto.reset", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate", "test"],
+      lint: ["credo"],
+      security: ["sobelow"],
+      watch: ["test.watch"]
     ]
   end
 end
